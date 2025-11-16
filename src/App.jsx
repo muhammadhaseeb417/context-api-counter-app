@@ -1,14 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useContext, useState } from 'react'
+import Counter from './components/Counter-Component'
+import { counterContext, CounterProvider } from './context/Counter-Context'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const counterState = useContext(counterContext)
 
   return (
     <>
       <h1>Context API - Counter App React </h1>
+      <h2>Count is: {counterState.count}</h2>
+      <Counter />
+      <Counter />
+      <Counter />
+      <Counter />
     </>
   )
 }
